@@ -1,9 +1,3 @@
-"""Predict dropout risk for a student and explain the main factors.
-
-Usage:
-    python predict.py                 # runs on 3 example students
-    python predict.py student.json    # JSON file with the feature values
-"""
 import json
 import sys
 import joblib
