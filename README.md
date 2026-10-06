@@ -6,9 +6,9 @@ explains which factors drive the risk, so advisors can intervene early.
 ## Setup
 ```bash
 pip install -r requirements.txt
-python train.py      # generates data (if missing), trains 3 models, saves model + results.png
-python predict.py    # scores 3 example students
-python predict.py student.json   # score your own student
+python train.py      
+python predict.py    
+python predict.py student.json   
 ```
 
 ## Pipeline
