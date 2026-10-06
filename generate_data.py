@@ -1,10 +1,3 @@
-"""Generate a realistic synthetic student dataset (real student data is private).
-
-Dropout probability is driven by academic performance, engagement and financial
-stress, plus random noise, so the model has real (but imperfect) signal to learn.
-Replace data/students.csv with your institution's data to use real records
-(needs the columns in features.py plus a `dropout` column of 0/1).
-"""
 import numpy as np
 import pandas as pd
 
