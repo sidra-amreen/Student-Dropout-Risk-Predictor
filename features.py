@@ -1,4 +1,3 @@
-"""Shared feature definitions."""
 FEATURES = [
     "age", "gpa", "attendance_rate", "failed_courses", "credits_passed_ratio",
     "assignments_submitted_rate", "lms_logins_per_week", "scholarship",
@@ -6,7 +5,6 @@ FEATURES = [
     "first_generation", "commute_km",
 ]
 
-# Human-readable names for explanations
 LABELS = {
     "age": "Age",
     "gpa": "GPA",
