@@ -1,4 +1,3 @@
-"""Train, compare, evaluate and save the dropout risk model."""
 import os
 import joblib
 import matplotlib
@@ -52,13 +51,11 @@ def main():
 
     best = fitted[best_name]
     proba = best.predict_proba(X_te)[:, 1]
-    # Lower threshold than 0.5: missing an at-risk student costs more than a false alarm
     threshold = 0.4
     pred = (proba >= threshold).astype(int)
     print(f"\nBest model: {best_name} (decision threshold = {threshold})\n")
     print(classification_report(y_te, pred, target_names=["stayed", "dropped out"]))
 
-    # Plots
     fig, ax = plt.subplots(1, 3, figsize=(17, 4.8))
     for name, m in fitted.items():
         RocCurveDisplay.from_estimator(m, X_te, y_te, ax=ax[0], name=name)
@@ -72,7 +69,6 @@ def main():
     plt.tight_layout()
     plt.savefig("results.png", dpi=120)
 
-    # Always keep an interpretable linear model for per-student explanations
     explainer = fitted["Logistic Regression"]
     joblib.dump({"model": best, "explainer": explainer, "threshold": threshold, "name": best_name}, "dropout_model.joblib")
     print("Saved dropout_model.joblib and results.png")
